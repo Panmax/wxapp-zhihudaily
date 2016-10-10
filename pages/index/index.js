@@ -66,7 +66,6 @@ Page({
   },
 
   fetchBefore: function () {
-    console.log('===')
     if (!this.data.date || this.data.loading) {
       return
     }

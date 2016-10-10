@@ -20,7 +20,9 @@
             <block wx:for="{{day.stories}}">
                 <view class="article-item">
                     <view class="article-item-title">{{item.title}}</view>
-                    <image class="article-item-image" src="{{item.images[0]}}" mode="aspectFill"></image>
+                    <view>
+                        <image class="article-item-image" src="{{item.images[0]}}" mode="aspectFill"></image>
+                    </view>
                 </view>
             </block>
         </block>
