@@ -1,0 +1,8 @@
+{
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#00a2ea",
+    "navigationBarTitleText": "今日热文",
+    "navigationBarTextStyle":"white"
+  }
+}

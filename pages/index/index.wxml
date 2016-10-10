@@ -1,0 +1,31 @@
+<view class="container" wx:if="{{!show_index}}">
+    <image animation="{{animationData}}" class="background-image" src="{{welcome_image.url}}"></image>
+    <text class="text-user">@ {{welcome_image.user}}</text>
+</view>
+
+<scroll-view class="scroll-view" scroll-y="{{true}}" wx:if="{{show_index}}" bindscrolltolower="fetchBefore">
+    <swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}">
+        <block wx:for="{{top_stories}}">
+            <swiper-item>
+                <image src="{{item.image}}" mode="aspectFill" class="swiper-item-image"/>
+                <view class="swiper-item-mask">
+                    <text class="swiper-item-text">{{item.title}}</text>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="article-list">
+        <block wx:for="{{article_list}}" wx:for-item="day">
+            <view class="section-title" wx:if="{{day.title}}">{{day.title}}</view>
+            <block wx:for="{{day.stories}}">
+                <view class="article-item">
+                    <view class="article-item-title">{{item.title}}</view>
+                    <image class="article-item-image" src="{{item.images[0]}}" mode="aspectFill"></image>
+                </view>
+            </block>
+        </block>
+    </view>
+    <loading hidden="{{!loading}}">
+        加载中...
+    </loading>
+</scroll-view>
